@@ -25,7 +25,12 @@ def add_two_numbers(l1: LinkedList[int], l2: LinkedList[int]) -> LinkedList[int]
             node1 = node1.next
         if node2:
             node2 = node2.next
+
+    if carry:
+        result.append(carry)
+
     return result
+
 
 
 
