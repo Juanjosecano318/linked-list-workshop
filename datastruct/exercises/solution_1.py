@@ -17,6 +17,16 @@ def add_two_numbers(l1: LinkedList[int], l2: LinkedList[int]) -> LinkedList[int]
         else:
             val2 = 0
 
+        total = val1 + val2 + carry
+        carry = total // 10
+        result.append(total % 10)
+
+        if node1:
+            node1 = node1.next
+        if node2:
+            node2 = node2.next
+    return result
+
 
 
 
