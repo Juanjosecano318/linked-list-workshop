@@ -8,14 +8,9 @@ def add_two_numbers(l1: LinkedList[int], l2: LinkedList[int]) -> LinkedList[int]
     node1, node2 = l1.head, l2.head
 
     while node1 or node2 or carry:
-        if l1:
-            val1 = node1.data
-        else:
-            val1 = 0
-        if l2:
-            val2 = node2.data
-        else:
-            val2 = 0
+
+        val1 = node1.data if node1 else 0
+        val2 = node2.data if node2 else 0
 
         total = val1 + val2 + carry
         carry = total // 10
