@@ -20,7 +20,7 @@ def swap_nodes_in_pairs(linked_list: LinkedList[int]) -> LinkedList[int]:
         second.next = first  # Intercambiamos el orden
 
         if prev:
-            prev.next = second # Conectamos el nodo previo con el nuevo primer nodo del par
+            prev.next = second #Conectamos el nodo previo con el nuevo primer nodo del par
 
         prev = first
         first = first.next
