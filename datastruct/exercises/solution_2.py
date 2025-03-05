@@ -8,22 +8,25 @@ def swap_nodes_in_pairs(linked_list: LinkedList[int]) -> LinkedList[int]:
     if not linked_list.head.next:
         return linked_list
 
+    #Inicializamos
     head = linked_list.head
-
+    second = head.next
     prev = None
     first = head
-    second = head.next
 
     while first and first.next:
-        second = first.next
-        first.next = second.next
-        if second:
-            second.next = first
+        second = first.next  # Apuntamos al segundo nodo del par
+        first.next = second.next  # Conectamos el primer nodo al siguiente nodo después del par
+        second.next = first  # Intercambiamos el orden
+
         if prev:
-            pass
+            prev.next = second # Conectamos el nodo previo con el nuevo primer nodo del par
 
+        prev = first
+        first = first.next
 
-
+    linked_list.head = second
+    return linked_list
 
 
 
